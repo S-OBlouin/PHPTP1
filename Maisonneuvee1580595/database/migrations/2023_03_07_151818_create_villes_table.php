@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCadVillesTable extends Migration
+class CreateVillesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateCadVillesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cad_villes', function (Blueprint $table) {
+        Schema::create('villes', function (Blueprint $table) {
             $table->id();
-            $table->text('nom');
+            $table->string('nom');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +27,6 @@ class CreateCadVillesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cad_villes');
+        Schema::dropIfExists('villes');
     }
 }
