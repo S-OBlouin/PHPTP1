@@ -15,11 +15,13 @@ class CreateCadEtudiantsTable extends Migration
     {
         Schema::create('cad_etudiants', function (Blueprint $table) {
             $table->id();
-            $table->text('nom');
-            $table->text('adresse');
-            $table->text('tel');
-            $table->text('email');
-            $table->text('dob');
+            $table->string('nom', 50);
+            $table->string('adresse', 50);
+            $table->string('tel', 20);
+            $table->string('email')->unique();
+            $table->string('ddn');
+            $table->integer('ville_id');
+            $table->foreign('ville_id')->references('id')->on('cad_villes');
             $table->timestamps();
         });
     }
