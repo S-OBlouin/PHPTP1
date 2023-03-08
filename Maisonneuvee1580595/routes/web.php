@@ -20,4 +20,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\VilleController;
 
-Route::get(EtudiantController::class, 'index')->name("liste.etudiant");
+Route::get('/', [EtudiantController::class, 'index'])->name("info.index");
+Route::get('etudiant/create', [EtudiantController::class, 'create'])->name("info.create");
+Route::get('etudiant/{etudiant}', [EtudiantController::class, 'show'])->name("info.etudiant");
+Route::get('modifier/{etudiant}', [EtudiantController::class, 'edit'])->name("info.modifier");
+Route::delete('etudiant/{etudiant}', [EtudiantController::class, 'destroy'])->name("info.suprimmer");

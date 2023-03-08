@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 
 class EtudiantController extends Controller
@@ -15,7 +16,7 @@ class EtudiantController extends Controller
     public function index()
     {
         $liste = Etudiant::all();
-        return view('liste', ['liste' => $liste]);
+        return view('info.liste', ['liste' => $liste]);
     }
 
     /**
@@ -25,7 +26,7 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        //
+        return view('info.create');
     }
 
     /**
@@ -58,7 +59,6 @@ class EtudiantController extends Controller
      */
     public function edit(Etudiant $etudiant)
     {
-        //
     }
 
     /**
