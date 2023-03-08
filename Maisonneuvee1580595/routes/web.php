@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\VilleController;
+
+Route::get(EtudiantController::class, 'index')->name("liste.etudiant");
