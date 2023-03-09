@@ -26,7 +26,8 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        return view('info.create');
+        $villes = Ville::all();
+        return view('info.create', ['villes' => $villes]);
     }
 
     /**
