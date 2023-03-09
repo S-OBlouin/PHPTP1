@@ -82,7 +82,15 @@ class EtudiantController extends Controller
      */
     public function update(Request $request, Etudiant $etudiant)
     {
-        //
+        $etudiant->update([
+            'nom' => $request->nom,
+            'adresse' => $request->adresse,
+            'tel' => $request->tel,
+            'email' => $request->email,
+            'ddn' => $request->ddn,
+            'ville_id' => $request->ville_id
+        ]);
+        return redirect(route('info.show', $etudiant->id));
     }
 
     /**
@@ -93,6 +101,7 @@ class EtudiantController extends Controller
      */
     public function destroy(Etudiant $etudiant)
     {
-        //
+        $etudiant->delete();
+        return redirect(route('info.index'));
     }
 }

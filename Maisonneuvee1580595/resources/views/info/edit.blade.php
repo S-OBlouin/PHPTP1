@@ -1,14 +1,15 @@
 @extends('layouts.index')
-@section('title', "Nouvel Étudiant")
+@section('title', "Modifier")
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card mt-3">
-                <form method="post">
+                <form method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="card-header">
-                        <h3 class="fw-bold text-center">Nouvel Étudiant</h3>
+                        <h3 class="fw-bold text-center">Modifier</h3>
                     </div>
                     <div class="card-body">
                         <div class="form-group mb-3">

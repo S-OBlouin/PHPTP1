@@ -12,7 +12,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group mb-3">
-                            <input type="text" name="nom" placeholder="Nom" class="form-control" value="{{$info}}">
+                            <input type="text" name="nom" placeholder="Nom" class="form-control" value="{{old('nom')}}">
                         </div>
                         <div class="form-group mb-3">
                             <input type="text" name="adresse" placeholder="Adresse" class="form-control" value="{{old('adresse')}}">
@@ -37,6 +37,7 @@
                     </div>
                     <div class="card-footer text-center">
                         <input type="submit" value="Enregistrer" class="btn btn-info">
+                        <a href="{{ route('info.index')}}" class="btn btn-primary">Retour</a>
                     </div>
                 </form>
             </div>

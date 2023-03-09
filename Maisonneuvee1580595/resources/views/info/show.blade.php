@@ -30,8 +30,16 @@
                         </tr>
                     </table>
                 </div>
-                <div class="card-footer text-center">
-                    <a href="{{ route('info.edit', $etudiant->id)}}" class="btn btn-warning">Modifier</a>
+                <div class="card-footer text-center col">
+                    <div class="mt-2">
+                        <a href="{{ route('info.edit', $etudiant->id)}}" class="btn btn-warning">Modifier</a>
+                        <a href="{{ route('info.index')}}" class="btn btn-primary">Retour</a>
+                    </div>
+                    <form method="post" class="text-center mt-2">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">Supprimer</button>
+                    </form>
                 </div>
             </div>
         </div>
