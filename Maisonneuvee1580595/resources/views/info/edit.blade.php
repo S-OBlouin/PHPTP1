@@ -12,19 +12,19 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group mb-3">
-                            <input type="text" name="nom" placeholder="Nom" class="form-control" value="{{$info}}">
+                            <input type="text" name="nom" placeholder="Nom" class="form-control" value="{{$info->nom}}">
                         </div>
                         <div class="form-group mb-3">
-                            <input type="text" name="adresse" placeholder="Adresse" class="form-control" value="{{old('adresse')}}">
+                            <input type="text" name="adresse" placeholder="Adresse" class="form-control" value="{{$info->adresse}}">
                         </div>
                         <div class="form-group mb-3">
-                            <input type="text" name="tel" placeholder="Téléphone" class="form-control" value="{{old('tel')}}">
+                            <input type="text" name="tel" placeholder="Téléphone" class="form-control" value="{{$info->tel}}">
                         </div>
                         <div class="form-group mb-3">
-                            <input type="text" name="email" placeholder="Courriel" class="form-control" value="{{old('email')}}">
+                            <input type="text" name="email" placeholder="Courriel" class="form-control" value="{{$info->email}}">
                         </div>
                         <div class="form-group mb-3">
-                            <input type="date" name="ddn" placeholder="Date de naissance" class="form-control" value="{{old('nom')}}">
+                            <input type="date" name="ddn" placeholder="Date de naissance" class="form-control" value="{{$info->ddn}}">
                         </div>
                         <div class="form-group mb-3">
                             <select class="form-select" name="ville_id">

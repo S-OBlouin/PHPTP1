@@ -17,7 +17,6 @@
                     <th>Adresse</th>
                     <th>Courriel</th>
                     <th>Information complète</th>
-                    <th>Modifier</th>
                 </tr>
             </thead>
             <tbody class="text-center">
@@ -26,8 +25,7 @@
                     <td>{{$etudiant->nom}}</td>
                     <td>{{$etudiant->adresse}}</td>
                     <td>{{$etudiant->email}}</td>
-                    <td><a href="{{ route('info.etudiant', $etudiant->id)}}" class="btn btn-info">Plus d'info</a></td>
-                    <td><a href="{{ route('info.modifier', $etudiant->id)}}" class="btn btn-warning">Modifier</a></td>
+                    <td><a href="{{ route('info.show', $etudiant->id)}}" class="btn btn-info">Plus d'info</a></td>
                 </tr>
                 @empty
                 <tr>

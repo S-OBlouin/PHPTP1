@@ -18,10 +18,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 use App\Http\Controllers\EtudiantController;
-use App\Http\Controllers\VilleController;
 
 Route::get('/', [EtudiantController::class, 'index'])->name("info.index");
 Route::get('etudiant/create', [EtudiantController::class, 'create'])->name("info.create");
-Route::get('etudiant/{etudiant}', [EtudiantController::class, 'show'])->name("info.etudiant");
-Route::get('modifier/{etudiant}', [EtudiantController::class, 'edit'])->name("info.modifier");
-Route::delete('etudiant/{etudiant}', [EtudiantController::class, 'destroy'])->name("info.suprimmer");
+Route::post('etudiant/create', [EtudiantController::class, 'store'])->name("info.store");
+Route::get('etudiant/{etudiant}', [EtudiantController::class, 'show'])->name("info.show");
+Route::get('etudiant/modifier/{etudiant}', [EtudiantController::class, 'edit'])->name("info.edit");
+Route::put('etudiant/modifier/{etudiant}', [EtudiantController::class, 'update'])->name("info.update");
+Route::delete('etudiant/{etudiant}', [EtudiantController::class, 'destroy'])->name("info.delete");

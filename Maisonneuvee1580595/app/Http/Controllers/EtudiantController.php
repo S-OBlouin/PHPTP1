@@ -38,7 +38,16 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $etudiant = Etudiant::create([
+            'nom' => $request->nom,
+            'adresse' => $request->adresse,
+            'tel' => $request->tel,
+            'email' => $request->email,
+            'ddn' => $request->ddn,
+            'ville_id' => $request->ville_id
+        ]);
+
+        return redirect(route('info.show', $etudiant->id));
     }
 
     /**
@@ -49,7 +58,7 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
-        //
+        return view('info.show', ['etudiant' => $etudiant]);
     }
 
     /**
@@ -60,6 +69,8 @@ class EtudiantController extends Controller
      */
     public function edit(Etudiant $etudiant)
     {
+        $villes = Ville::all();
+        return view('info.edit', ['info' => $etudiant, 'villes' => $villes]);
     }
 
     /**
